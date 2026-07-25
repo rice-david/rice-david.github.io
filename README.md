@@ -1,28 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-</head>
-<body>
-    <h1>Welcome to My Webpage</h1>
-    <p>Frankly  I'm not completely sure what this is supposed to be. This may just be a static, long snaking page of throughts and ideas, as well as the documentation of some of the math and projects that I have done in the past. </p>
-<h2> Working with mathmode</h2>
-<img src = "spline_example.png", alt = "spline coefficients in Kolmolgorov Arnold Network">
-</body>
-<html lang="en">
-<meta charset="UTF-8">
-<body>
-    <h1>Obsession</h1>
-    <p>I saw the movie obsession the other day at the Kenworthy theater. I think one thing that was a bit scary about it was the misconception. We see in the movie that before the wish, Nikki is leaving Bear's car to go inside. After the wish, she comes out of the house completely changed, and finding ways to get Bear to either come inside or stay the night at his house. She is completely transfixed by him, but we see small cracks where the "true Nikki" appears to resurface. There was the moment when her and bear were on the bed the first night she stayed over, and said "wait what the fuck?", the moment when Bear was on the phone with the Wishing Willow company and hearing the screaming voice of Nikki over the phone, and lastly the moment where the real Nikki came out the night to ask bear to kill her. For the last moment, she claimed the "other one was asleep". This convinced many (including me) that there was some kind of possesion. That there was some "non Nikki" that was inhabiting her body. But after the movie there was some googling (as there always is), and it turns out the director made a statement that it was the "real Nikki" that was obsessed.</p>
-<p>I think this makes it a bit better. For possession, there is this idea that you are not in control of your body, and there is another entity, that has taken it from the true you. However, if it is truly Nikki making the decisions, it means that there is a corruption of the true self. That is it the real Nikki who has become a shell of her former self, with all of her aspirations and charm and wit. To have her true self to be twisted in this way is much more horrifying, as she loses all automonomy.</p>
-<p> I throught it was so funny how long Bear was completely in denial of anything wrong in the relationship in front of his friends. Every single time people were saying that it was kind of weird that Nikki and him were together and that he may be going through a psychotic break, but he was too preoccupied with the idea of them being together being paletable to admit anything and ask for help. "How bad could it be just to be with me?" he asked the real Nikki. It felt like he was trying to convince people that it could happen, as a sign of status as a man. If he just swallowed his pride, he may have gotten Ian (rest in peace) or someone else not to wish for 1 billion dollars and solve the problem.</p>
+# The Merlot theme
 
-<body>
-    <h1> LED Colors </h1>
-    <p> At my job, we have to work with LED lights, and are particularly intereted in the distribution of colors. Typically when I considered the type of color, I would think of it in terms of triplets, or some (r,g,b) value. However, this is a reduction of what we would consider to occurr in life, because a given color can be produced using a combination of color combinations. The two colors made up of different wavelengths can very much appear the same under a given lighting condition. However if the overhead lighting changes (such as changing from a white light to a yellow light), the two colors no longer appear to be the same.
-</p>
+[![.github/workflows/ci.yaml](https://github.com/pages-themes/merlot/actions/workflows/ci.yaml/badge.svg)](https://github.com/pages-themes/merlot/actions/workflows/ci.yaml) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-merlot.svg)](https://badge.fury.io/rb/jekyll-theme-merlot)
 
-<p> This is known as **metamorism**.  We can use the color-science package to do a fun demo. Let us come up with a random color, then generate a metamorism that produces the same thing. I like green, so we will pick some greenish color. </p>
+*Merlot is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/merlot), or even [use it today](#usage).*
+
+![Thumbnail of Merlot](thumbnail.png)
+
+## Usage
+
+To use the Merlot theme:
+
+1. Add the following to your site's `_config.yml`:
+
+    ```yml
+    remote_theme: pages-themes/merlot@v0.2.0
+    plugins:
+    - jekyll-remote-theme # add this line to the plugins list if you already have one
+    ```
+
+2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+
+    ```ruby
+    gem "github-pages", group: :jekyll_plugins
+    ```
+
+## Customizing
+
+### Configuration variables
+
+Merlot will respect the following variables, if set in your site's `_config.yml`:
+
+```yml
+title: [The title of your site]
+description: [A short description of your site's purpose]
+```
+
+Additionally, you may choose to set the following optional variables:
+
+```yml
+show_downloads: ["true" or "false" (unquoted) to indicate whether to provide a download URL]
+google_analytics: [Your Google Analytics tracking ID]
+```
+
+### Stylesheet
+
+If you'd like to add your own custom styles:
+
+1. Create a file called `/assets/css/style.scss` in your site
+2. Add the following content to the top of the file, exactly as shown:
+    ```scss
+    ---
+    ---
+
+    @import "{{ site.theme }}";
+    ```
+3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+
+*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+
+### Layouts
+
+If you'd like to change the theme's HTML layout:
+
+1. For some changes such as a custom `favicon`, you can add custom files in your local `_includes` folder. The files [provided with the theme](https://github.com/pages-themes/merlot/tree/master/_includes) provide a starting point and are included by the [original layout template](https://github.com/pages-themes/merlot/blob/master/_layouts/default.html).
+2. For more extensive changes, [copy the original template](https://github.com/pages-themes/merlot/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
+3. Create a file called `/_layouts/default.html` in your site
+4. Paste the default layout content copied in the first step
+5. Customize the layout as you'd like
+
+### Customizing Google Analytics code
+
+Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/head-custom-google-analytics.html` in your Jekyll site.
+
+### Overriding GitHub-generated URLs
+
+Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+
+1. Look at [the template source](https://github.com/pages-themes/merlot/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
+2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
+    ```yml
+    github:
+      zip_url: http://example.com/download.zip
+      another_url: another value
+    ```
+3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+
+*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+
+For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+
+## Roadmap
+
+See the [open issues](https://github.com/pages-themes/merlot/issues) for a list of proposed features (and known issues).
+
+## Project philosophy
+
+The Merlot theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+
+## Contributing
+
+Interested in contributing to Merlot? We'd love your help. Merlot is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+
+### Previewing the theme locally
+
+If you'd like to preview the theme locally (for example, in the process of proposing a change):
+
+1. Clone down the theme's repository (`git clone https://github.com/pages-themes/merlot`)
+2. `cd` into the theme's directory
+3. Run `script/bootstrap` to install the necessary dependencies
+4. Run `bundle exec jekyll serve` to start the preview server
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
+
+### Running tests
+
+The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
